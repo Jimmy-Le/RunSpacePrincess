@@ -23,4 +23,12 @@ public class EnemyMovement : MonoBehaviour
         }
         this.transform.position =  newPosition;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Princess"))
+        {
+            GameManager.instance.GameOver();
+        }
+    }
 }

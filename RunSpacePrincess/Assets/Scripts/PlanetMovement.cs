@@ -6,6 +6,11 @@ public class PlanetMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if(GameManager.instance.isPaused)
+		{
+			return;
+		}
+
         transform.Translate(Vector3.left * speed * Time.deltaTime);
 
         if (transform.position.x <= GameManager.instance.despawnZone.position.x)
@@ -13,6 +18,7 @@ public class PlanetMovement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    
     
     
 }

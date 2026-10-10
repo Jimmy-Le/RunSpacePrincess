@@ -43,5 +43,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 3876147757
+    locked: 0
+  - name: Objects
+    uniqueID: 2336589251
+    locked: 0
+  - name: Decoration
+    uniqueID: 3952793007
+    locked: 0
+  - name: Princess
+    uniqueID: 2806497235
+    locked: 0
   m_RenderingLayers:
   - Default

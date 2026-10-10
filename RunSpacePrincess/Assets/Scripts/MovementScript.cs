@@ -38,6 +38,11 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (GameManager.instance.isPaused)
+        {
+            return;
+        }
+        
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, objectLayer);
 
         if (isGrounded)
