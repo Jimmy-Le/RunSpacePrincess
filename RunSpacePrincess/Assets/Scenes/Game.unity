@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 23089148}
   - component: {fileID: 23089147}
   - component: {fileID: 23089146}
+  - component: {fileID: 23089149}
   m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
@@ -171,17 +172,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.025425434, y: -0.13348627}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 19.199999, y: 2.503125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 19.128696, y: 2.233158}
   m_EdgeRadius: 0
 --- !u!212 &23089147
 SpriteRenderer:
@@ -232,7 +233,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 199249360466117110, guid: 1cd800108237d3727a74f667ee5e89c4, type: 3}
   m_Color: {r: 0.3726415, g: 0.3726415, b: 0.3726415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -252,11 +253,33 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.5, z: 0}
-  m_LocalScale: {x: 20, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &23089149
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23089145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: deed80e3e0e30a52182bcc85dc3239be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &24058581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,6 +2427,7 @@ MonoBehaviour:
   despawnZone: {fileID: 719721045}
   spawner: {fileID: 876918858}
   maxTime: 100
+  floorAnimator: {fileID: 23089149}
   difficulty: 1
   spawnRate: 3
   isPaused: 0
@@ -2435,6 +2459,7 @@ GameObject:
   - component: {fileID: 1627859223}
   - component: {fileID: 1627859226}
   - component: {fileID: 1627859227}
+  - component: {fileID: 1627859228}
   m_Layer: 7
   m_Name: Death
   m_TagString: Untagged
@@ -2598,6 +2623,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1627859228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627859222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5943b2b0bb6c28fe9954d804809f9b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  animator: {fileID: 1627859227}
+  target: {fileID: 1382290208}
+  farDistance: 3
+  nearDistance: 1
+  slowSpeed: 1
+  fastSpeed: 3
 --- !u!1 &1861383899
 GameObject:
   m_ObjectHideFlags: 0

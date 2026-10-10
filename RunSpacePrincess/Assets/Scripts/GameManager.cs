@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Transform despawnZone;
 	[SerializeField] public Spawner spawner;
 	[SerializeField] public float maxTime = 100f;
+	[SerializeField] public Animator floorAnimator;
 
 	public int difficulty = 1;
 	private float difficultyTimer = 0;
@@ -43,13 +44,15 @@ public class GameManager : MonoBehaviour
 				difficultyTimer = 0;
 			}
 
-		}
+		} 
 		
 		if(lastSpawnTime >= spawnRate && gameTime <= maxTime)
 		{
 			spawner.spawnRandom();
    			lastSpawnTime = 0;
 		}	
+
+
 		
 		
 		
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour
 	public void PauseGame(bool value = true)
 	{
 		isPaused = value;
+		floorAnimator.SetFloat("idleSpeed", value ? 0f : 1f);
 		
 	}
 	public void GameOver()
