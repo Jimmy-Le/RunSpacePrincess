@@ -251,8 +251,8 @@ Transform:
   m_GameObject: {fileID: 23089145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1686, y: -4.5519, z: 0}
-  m_LocalScale: {x: 18.902477, y: 1.6639, z: 1}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalScale: {x: 20, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -938,7 +938,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1209,7 +1209,7 @@ Transform:
   m_GameObject: {fileID: 727122179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.87, z: 0}
+  m_LocalPosition: {x: 0, y: 4.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1378,7 +1378,7 @@ Transform:
   m_GameObject: {fileID: 876918856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.56, y: 1.1, z: 0}
+  m_LocalPosition: {x: 11.47, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1400,6 +1400,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spawnObjects:
+  - {fileID: 471276652376925906, guid: b50cdeb071a9a485ebf1cb4424c5b26d, type: 3}
+  - {fileID: 471276652376925906, guid: 5b94901f4cbc391f9a9bc2e36aba1b1d, type: 3}
+  - {fileID: 471276652376925906, guid: 0f51a348e3e4e4968b93888ae5415091, type: 3}
+  - {fileID: 471276652376925906, guid: 93a8deb511fdeb4ac9d14c6359d6e13e, type: 3}
+  - {fileID: 471276652376925906, guid: aad0c4d00e5feadad891c9930baa07c6, type: 3}
+  - {fileID: 471276652376925906, guid: 1faf3cd9068f6f9508bbee18d7ec4ea4, type: 3}
+  - {fileID: 471276652376925906, guid: f1e43e1be22ae64158d3c33cfa868ac0, type: 3}
+  - {fileID: 471276652376925906, guid: 1952f4ebf8892f9e586d7ca3de222ca9, type: 3}
   - {fileID: 471276652376925906, guid: 9cb76344f7ef64188b60f95d779152d8, type: 3}
   upperLimit: {fileID: 727122180}
   lowerLimit: {fileID: 1352601493}
@@ -1854,7 +1862,7 @@ Transform:
   m_GameObject: {fileID: 1352601492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.54, z: 0}
+  m_LocalPosition: {x: 0, y: -6.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1873,6 +1881,7 @@ GameObject:
   - component: {fileID: 1382290206}
   - component: {fileID: 1382290205}
   - component: {fileID: 1382290209}
+  - component: {fileID: 1382290210}
   m_Layer: 0
   m_Name: Princess
   m_TagString: Princess
@@ -1941,17 +1950,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0048475266, y: -0.009695232}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.86, y: 1.76}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6412749, y: 1.3878108}
   m_EdgeRadius: 0
 --- !u!212 &1382290207
 SpriteRenderer:
@@ -2040,6 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179931c772deac7789abfba1724d1e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  animator: {fileID: 1382290210}
   inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   rb: {fileID: 1382290205}
   groundCheck: {fileID: 1453318308}
@@ -2057,6 +2067,28 @@ MonoBehaviour:
   decayPerSecond: 30
   isSlamming: 0
   isGrounded: 0
+--- !u!95 &1382290210
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382290204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d6a062ac0468d431816bdbc0deb03fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1392419029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,6 +2101,7 @@ GameObject:
   - component: {fileID: 1392419031}
   - component: {fileID: 1392419030}
   - component: {fileID: 1392419033}
+  - component: {fileID: 1392419034}
   m_Layer: 7
   m_Name: Alien
   m_TagString: Enemy
@@ -2190,7 +2223,7 @@ Transform:
   m_GameObject: {fileID: 1392419029}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.71, y: 3.66, z: 0}
+  m_LocalPosition: {x: -2.71, y: 3.76, z: 0}
   m_LocalScale: {x: 3.1326406, y: 3.785069, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2210,6 +2243,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   princessTransform: {fileID: 1382290208}
   isX: 1
+--- !u!114 &1392419034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392419029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a7899f76c3aca43b1205efc79638e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IncreaseVisibility
+  princess: {fileID: 1382290208}
+  spriteRenderer: {fileID: 1392419031}
+  visibleDistance: 1
+  hiddenDistance: 2
 --- !u!1 &1408828939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2363,7 @@ Transform:
   m_GameObject: {fileID: 1453318307}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.55, z: 0}
+  m_LocalPosition: {x: 0, y: -0.795, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2355,7 +2404,8 @@ MonoBehaviour:
   despawnZone: {fileID: 719721045}
   spawner: {fileID: 876918858}
   maxTime: 100
-  spawnRate: 5
+  difficulty: 1
+  spawnRate: 3
   isPaused: 0
 --- !u!4 &1509362230
 Transform:
@@ -2483,9 +2533,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -342174289
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6991849013916550155, guid: 221d8bca1dc6ed53cb8761428f732399, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

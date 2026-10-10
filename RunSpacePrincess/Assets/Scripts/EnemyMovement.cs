@@ -28,7 +28,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Princess"))
         {
-            GameManager.instance.GameOver();
+			GameManager.instance.PauseGame(true);
+            collision.gameObject.GetComponent<Animator>().SetTrigger("Death");
         }
     }
 }

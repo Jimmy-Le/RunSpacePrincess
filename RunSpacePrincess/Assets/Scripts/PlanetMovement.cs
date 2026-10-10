@@ -3,7 +3,15 @@ using UnityEngine;
 public class PlanetMovement : MonoBehaviour
 {
     [SerializeField] public float speed = 2f;
+
+    [SerializeField] public float baseSpeed = 2f;
     // Update is called once per frame
+
+    void Start()
+    {
+        speed = baseSpeed * GameManager.instance.difficulty;
+    }
+    
     void Update()
     {
 		if(GameManager.instance.isPaused)

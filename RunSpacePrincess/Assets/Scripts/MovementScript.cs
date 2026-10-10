@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class MovementScript : MonoBehaviour
 {
-
+	[SerializeField] public Animator animator;
     [SerializeField] public InputActionAsset inputActions;
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -56,21 +56,33 @@ public class MovementScript : MonoBehaviour
 		}
         
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, objectLayer);
+		
+		bool isFalling = rb.linearVelocity.y < -0.1f;
+		animator.SetBool("isJumping", !isFalling);
+		animator.SetBool("isFalling", isFalling);	
+		
+
 
         if (isGrounded)
         {
             isSlamming = false;
+			animator.SetBool("isFalling", false);
+			animator.SetBool("isJumping", false);
         }
         
         if (jump.IsPressed() && !isSlamming)
         {
             Jump();
+			animator.SetBool("isJumping", true);
+			animator.SetBool("isFalling", false);
         }
 
         if (slam.IsPressed())
         {
             isSlamming = true;
             Slam();
+			animator.SetBool("isFalling", true);
+			animator.SetBool("isJumping", false);
         }
 
         if (transform.position.x > xLimit)
@@ -94,4 +106,9 @@ public class MovementScript : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, slamSpeed);
     }
+
+	public void Death()
+	{
+		GameManager.instance.GameOver();
+	}
 }
