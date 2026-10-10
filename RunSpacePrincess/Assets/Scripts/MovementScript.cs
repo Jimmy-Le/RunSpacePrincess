@@ -9,6 +9,8 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.15f;
     [SerializeField] private LayerMask groundLayer;
+    
+    [SerializeField] private LayerMask objectLayer;
 
     [SerializeField] public float xLimit;
     private InputAction jump;
@@ -31,10 +33,12 @@ public class MovementScript : MonoBehaviour
         xLimit = transform.position.x;
     }
 
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, objectLayer);
 
         if (isGrounded)
         {
