@@ -9,7 +9,7 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.15f;
     [SerializeField] private LayerMask groundLayer;
-    
+  
     [SerializeField] private LayerMask objectLayer;
 
     [SerializeField] public float xLimit;
@@ -17,6 +17,8 @@ public class MovementScript : MonoBehaviour
     private InputAction slam;
     public float speed = 5f;
     public float slamSpeed = -25f;
+	public float maxVelocity = -1f;
+	public float decayPerSecond = 30f;
 
     public bool isSlamming = false;
     public bool isGrounded = true;
@@ -40,8 +42,18 @@ public class MovementScript : MonoBehaviour
     {
         if (GameManager.instance.isPaused)
         {
+			rb.linearVelocity = Vector2.zero;
+			rb.angularVelocity = 0f;
+			rb.bodyType = RigidbodyType2D.Kinematic;
             return;
         }
+		else {
+			rb.bodyType = RigidbodyType2D.Dynamic;
+			if(rb.linearVelocity.x < maxVelocity)
+			{
+			  	rb.linearVelocityX = Mathf.MoveTowards(rb.linearVelocityX, 0f, decayPerSecond * Time.fixedDeltaTime);
+			}	
+		}
         
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, objectLayer);
 
