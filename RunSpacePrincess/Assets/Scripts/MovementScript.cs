@@ -55,6 +55,7 @@ public class MovementScript : MonoBehaviour
 			if (jump.IsPressed() || slam.IsPressed())
 			{
 				GameManager.instance.TurnOffTutorial();
+			
 			}
 		}
 
@@ -123,6 +124,7 @@ public class MovementScript : MonoBehaviour
     
     public void Slam()
     {
+		SoundManager.PlaySound(SoundManager.SoundType.Jump, 0.2f);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, slamSpeed);
     }
 

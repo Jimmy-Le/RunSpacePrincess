@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class GameManager : MonoBehaviour
 	[SerializeField] public Spawner spawner;
 	[SerializeField] public float maxTime = 100f;
 	[SerializeField] public Animator floorAnimator;
+	[SerializeField] public AudioSource audioSource;
+	[SerializeField] private float fadeDuration = 3f;
 	
 
 	public int difficulty = 1;
 	private float difficultyTimer = 0;
-	private float diffTimerLimit = 10f;
+	private float diffTimerLimit = 5f;
 
 	private float gameTime = 0;
 	private float lastSpawnTime = 1f;
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour
 		tutorialPanel.SetActive(false);
 		PauseGame(false);
 		tutorialOn = false;
+		audioSource.Play();
 	}
 
 	public void PauseGame(bool value = true)
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
 	public void GameOver()
 	{
 		PauseGame(true);
+		FadeMusic();
 		gameOverPanel.SetActive(true);
 	}
 
@@ -103,7 +108,38 @@ public class GameManager : MonoBehaviour
 
 	public void Win()
 	{
+		FadeMusic();
 		winPanel.SetActive(true);
 	}
+
+	public void FadeMusic()
+	{
+		StartCoroutine(FadeOut());
+	}
+
+
+    private IEnumerator FadeOut()
+    {
+        float startVolume = audioSource.volume;
+        float time = 0f;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+
+            audioSource.volume = Mathf.Lerp(
+                startVolume,
+                0f,
+                time / fadeDuration
+            );
+
+            yield return null;
+        }
+
+        audioSource.volume = 0f;
+        audioSource.Stop();
+    }
+
+
 
 }
