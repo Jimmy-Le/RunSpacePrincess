@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
 	{
 		PauseGame(true);
 		FadeMusic();
+		SoundManager.PlaySound(SoundManager.SoundType.Defeat);
 		gameOverPanel.SetActive(true);
 	}
 
@@ -109,6 +110,7 @@ public class GameManager : MonoBehaviour
 	public void Win()
 	{
 		FadeMusic();
+		SoundManager.PlaySound(SoundManager.SoundType.Victory);
 		winPanel.SetActive(true);
 	}
 

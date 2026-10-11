@@ -48,12 +48,17 @@ MonoBehaviour:
   soundList:
   - name: Jump
     sounds:
-    - {fileID: 8300000, guid: 05d3507a021e78d16ba7f0355355837f, type: 3}
-    - {fileID: 8300000, guid: f39195975d975fb579663037ff407a64, type: 3}
-    - {fileID: 8300000, guid: 5fd7687f1098d4701a6641f60871ae11, type: 3}
+    - {fileID: 8300000, guid: 8155109d85d3ae310a116974b750a8c0, type: 3}
+    - {fileID: 8300000, guid: 76830ffdc3ed2bd9bb3ca5a6652b7a63, type: 3}
+    - {fileID: 8300000, guid: 5e78ac86ef7f2836ea7a97fd59b8744d, type: 3}
   - name: Click
     sounds:
     - {fileID: 8300000, guid: 139b2ce3060fbb568be9132c4d6152c8, type: 3}
+  - name: Victory
+    sounds:
+    - {fileID: 8300000, guid: 03ee2336d1fe41652957a9b00ea9a194, type: 3}
+  - name: Defeat
+    sounds: []
   audioSource: {fileID: 4146445120609085790}
 --- !u!82 &4146445120609085790
 AudioSource:

@@ -99,6 +99,7 @@ public class MovementScript : MonoBehaviour
 
         if (slam.IsPressed())
         {
+			SoundManager.PlaySound(SoundManager.SoundType.Jump, 0.2f);
             isSlamming = true;
             Slam();
 			animator.SetBool("isFalling", true);
@@ -124,7 +125,6 @@ public class MovementScript : MonoBehaviour
     
     public void Slam()
     {
-		SoundManager.PlaySound(SoundManager.SoundType.Jump, 0.2f);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, slamSpeed);
     }
 

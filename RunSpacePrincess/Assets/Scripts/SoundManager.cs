@@ -7,7 +7,9 @@ public class SoundManager : MonoBehaviour
     public enum SoundType
     {
         Jump,
-        Click
+        Click,
+        Victory,
+        Defeat,
     }
 
 
