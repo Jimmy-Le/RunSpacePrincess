@@ -17,12 +17,13 @@ public class GameManager : MonoBehaviour
 	[SerializeField] public float maxTime = 100f;
 	[SerializeField] public Animator floorAnimator;
 	[SerializeField] public AudioSource audioSource;
+	[SerializeField] public AudioSource backgroundAudioSource;
 	[SerializeField] private float fadeDuration = 3f;
 	
 
 	public int difficulty = 1;
 	private float difficultyTimer = 0;
-	private float diffTimerLimit = 5f;
+	private float diffTimerLimit = 20f;
 
 	private float gameTime = 0;
 	private float lastSpawnTime = 1f;
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
 		tutorialPanel.SetActive(false);
 		PauseGame(false);
 		tutorialOn = false;
+		FadeMusic(backgroundAudioSource);
 		audioSource.Play();
 	}
 
@@ -92,8 +94,8 @@ public class GameManager : MonoBehaviour
 	public void GameOver()
 	{
 		PauseGame(true);
-		FadeMusic();
-		SoundManager.PlaySound(SoundManager.SoundType.Defeat);
+		FadeMusic(audioSource);
+		SoundManager.PlaySound(SoundManager.SoundType.Defeat, 0.3f);
 		gameOverPanel.SetActive(true);
 	}
 
@@ -109,27 +111,27 @@ public class GameManager : MonoBehaviour
 
 	public void Win()
 	{
-		FadeMusic();
-		SoundManager.PlaySound(SoundManager.SoundType.Victory);
+		FadeMusic(audioSource);
+		SoundManager.PlaySound(SoundManager.SoundType.Victory, 0.4f);
 		winPanel.SetActive(true);
 	}
 
-	public void FadeMusic()
+	public void FadeMusic(AudioSource sound)
 	{
-		StartCoroutine(FadeOut());
+		StartCoroutine(FadeOut(sound));
 	}
 
 
-    private IEnumerator FadeOut()
+    private IEnumerator FadeOut(AudioSource sound)
     {
-        float startVolume = audioSource.volume;
+        float startVolume = sound.volume;
         float time = 0f;
 
         while (time < fadeDuration)
         {
             time += Time.deltaTime;
 
-            audioSource.volume = Mathf.Lerp(
+            sound.volume = Mathf.Lerp(
                 startVolume,
                 0f,
                 time / fadeDuration
@@ -138,8 +140,8 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        audioSource.volume = 0f;
-        audioSource.Stop();
+        sound.volume = 0f;
+        sound.Stop();
     }
 
 

@@ -120,12 +120,12 @@ public class MovementScript : MonoBehaviour
 
     public void Jump()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, speed);
+        rb.linearVelocity = new Vector2(0, speed);
     }
     
     public void Slam()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, slamSpeed);
+        rb.linearVelocity = new Vector2(0, slamSpeed);
     }
 
 	public void Death()

@@ -58,7 +58,8 @@ MonoBehaviour:
     sounds:
     - {fileID: 8300000, guid: 03ee2336d1fe41652957a9b00ea9a194, type: 3}
   - name: Defeat
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 6100c76e02e60095d974ca97202e0ee5, type: 3}
   audioSource: {fileID: 4146445120609085790}
 --- !u!82 &4146445120609085790
 AudioSource:
