@@ -117,7 +117,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
+        y: 600
         width: 200
         height: 200
       alignment: 0
@@ -139,7 +139,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 400
+        y: 600
         width: 200
         height: 200
       alignment: 0
@@ -161,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 400
+        y: 600
         width: 200
         height: 200
       alignment: 0
@@ -182,8 +182,8 @@ TextureImporter:
       name: PrincessAnim_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
+        x: 600
+        y: 600
         width: 200
         height: 200
       alignment: 0
@@ -204,8 +204,8 @@ TextureImporter:
       name: PrincessAnim_4
       rect:
         serializedVersion: 2
-        x: 200
-        y: 200
+        x: 0
+        y: 400
         width: 200
         height: 200
       alignment: 0
@@ -226,8 +226,8 @@ TextureImporter:
       name: PrincessAnim_5
       rect:
         serializedVersion: 2
-        x: 400
-        y: 200
+        x: 200
+        y: 400
         width: 200
         height: 200
       alignment: 0
@@ -240,6 +240,138 @@ TextureImporter:
       bones: []
       spriteID: df0646ba825cf4495848aedd1ebed0e0
       internalID: 1313964729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrincessAnim_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0772df71706983ce59830bf3cbeaf850
+      internalID: -1151068038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrincessAnim_7
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adfc7bbf506f713d2ac09dd6ba5bb551
+      internalID: -304869794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrincessAnim_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c167d054021c1c39b7b7099f1fb9315
+      internalID: 674236039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrincessAnim_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b52b0ab3cc8b566e834342ce1dde1e5
+      internalID: 1507676335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrincessAnim_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce57bddb00bcc570693afdfde1361877
+      internalID: -306262900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrincessAnim_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c03911ee1c670f5ad0592dafd107ea
+      internalID: 703412142
       vertices: []
       indices: 
       edges: []
@@ -262,10 +394,16 @@ TextureImporter:
     nameFileIdTable:
       PrincessAnim_0: -3391253136487545448
       PrincessAnim_1: 657098597
+      PrincessAnim_10: -306262900
+      PrincessAnim_11: 703412142
       PrincessAnim_2: -2132270389
       PrincessAnim_3: 1066949760
       PrincessAnim_4: 1604293763
       PrincessAnim_5: 1313964729
+      PrincessAnim_6: -1151068038
+      PrincessAnim_7: -304869794
+      PrincessAnim_8: 674236039
+      PrincessAnim_9: 1507676335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

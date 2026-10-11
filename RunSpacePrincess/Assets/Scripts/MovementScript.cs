@@ -35,11 +35,30 @@ public class MovementScript : MonoBehaviour
         xLimit = transform.position.x;
     }
 
+    void Update()
+    {
+        if(GameManager.instance.tutorialOn)
+        		{
+        			if (jump.IsPressed() || slam.IsPressed())
+        			{
+        				GameManager.instance.TurnOffTutorial();
+        			}
+        		}
+    }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+		if(GameManager.instance.tutorialOn)
+		{
+			if (jump.IsPressed() || slam.IsPressed())
+			{
+				GameManager.instance.TurnOffTutorial();
+			}
+		}
+
+
         if (GameManager.instance.isPaused)
         {
 			rb.linearVelocity = Vector2.zero;
@@ -110,5 +129,10 @@ public class MovementScript : MonoBehaviour
 	public void Death()
 	{
 		GameManager.instance.GameOver();
+	}
+
+	public void Win()
+	{
+		GameManager.instance.Win();
 	}
 }

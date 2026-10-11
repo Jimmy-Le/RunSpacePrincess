@@ -7,12 +7,15 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 	
 	[SerializeField] public GameObject gameOverPanel;
+	[SerializeField] public GameObject winPanel;
+	[SerializeField] public GameObject tutorialPanel;
     [SerializeField] public Slider progressBar;
     [SerializeField] public GameObject princess;
     [SerializeField] public Transform despawnZone;
 	[SerializeField] public Spawner spawner;
 	[SerializeField] public float maxTime = 100f;
 	[SerializeField] public Animator floorAnimator;
+	
 
 	public int difficulty = 1;
 	private float difficultyTimer = 0;
@@ -21,7 +24,10 @@ public class GameManager : MonoBehaviour
 	private float gameTime = 0;
 	private float lastSpawnTime = 1f;
 	public float spawnRate = 1.5f;
-	public bool isPaused = false;
+	public bool isPaused = true;
+	public bool winTriggered = false;
+
+	public bool tutorialOn = true;
 	
 
     void Awake()
@@ -31,6 +37,14 @@ public class GameManager : MonoBehaviour
 
 	void Update ()
 	{
+		if(gameTime >= maxTime && !winTriggered)
+		{
+			winTriggered = true;
+            PauseGame(true);
+			princess.GetComponentInChildren<Animator>().SetTrigger("Win");
+		}
+		
+
 		if (!isPaused)
 		{
 			gameTime += Time.deltaTime;
@@ -58,6 +72,13 @@ public class GameManager : MonoBehaviour
 		
 	}
 
+	public void TurnOffTutorial()
+	{
+		tutorialPanel.SetActive(false);
+		PauseGame(false);
+		tutorialOn = false;
+	}
+
 	public void PauseGame(bool value = true)
 	{
 		isPaused = value;
@@ -78,6 +99,11 @@ public class GameManager : MonoBehaviour
 	public void ToTitleScreen()
 	{
 		SceneManager.LoadScene("TitleScreen");
+	}
+
+	public void Win()
+	{
+		winPanel.SetActive(true);
 	}
 
 }

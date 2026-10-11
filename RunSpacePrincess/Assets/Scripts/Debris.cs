@@ -27,7 +27,7 @@ public class Debris : MonoBehaviour
         if (collision.gameObject.CompareTag("Princess"))
         {
 			GameManager.instance.PauseGame(true);
-            collision.gameObject.GetComponent<Animator>().SetTrigger("Death");
+            collision.gameObject.GetComponentInChildren<Animator>().SetTrigger("Death");
         }
     }
 }
